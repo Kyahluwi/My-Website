@@ -14,9 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        'pixel': ['"Press Start 2P"', 'cursive'],
-        'mono': ['"Share Tech Mono"', 'monospace'],
-        'orbitron': ['Orbitron', 'sans-serif'],
+        'poppins': ['Poppins', 'sans-serif'],
+        'playfair': ['"Playfair Display"', 'serif'],
+        'montserrat': ['Montserrat', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -62,10 +62,11 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        'cyber-green': "hsl(var(--cyber-green))",
-        'cyber-cyan': "hsl(var(--cyber-cyan))",
-        'fps-orange': "hsl(var(--fps-orange))",
-        'danger-red': "hsl(var(--danger-red))",
+        'ice-blue': "hsl(var(--ice-blue))",
+        'frost-blue': "hsl(var(--frost-blue))",
+        'snow-white': "hsl(var(--snow-white))",
+        'polar-gray': "hsl(var(--polar-gray))",
+        'arctic-teal': "hsl(var(--arctic-teal))",
       },
       borderRadius: {
         lg: "var(--radius)",

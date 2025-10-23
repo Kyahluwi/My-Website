@@ -1,4 +1,4 @@
-import { Mail, Github, Linkedin, Send } from "lucide-react";
+import { Mail, Github, Linkedin, Send, Snowflake } from "lucide-react";
 import { useState } from "react";
 
 const Contact = () => {
@@ -15,51 +15,57 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 px-6 relative cyber-grid">
+    <section id="contact" className="py-20 px-6 relative">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
-          <span className="text-primary">&lt;</span>
-          CONTACT
-          <span className="text-primary">/&gt;</span>
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-primary">
+          Get in Touch
         </h2>
-        <p className="text-center text-muted-foreground mb-16 pixel-font text-xs">
-          [ ESTABLISH CONNECTION ]
+        <p className="text-center text-muted-foreground mb-16 flex items-center justify-center gap-2">
+          <Snowflake className="w-4 h-4" />
+          <span>Let's connect and collaborate</span>
+          <Snowflake className="w-4 h-4" />
         </p>
 
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Info */}
           <div className="space-y-6">
-            <div className="hud-corner bg-card border border-primary/30 p-6">
-              <h3 className="text-xl font-bold text-primary mb-6">GET IN TOUCH</h3>
+            <div className="frost-glass rounded-2xl p-6">
+              <h3 className="text-xl font-bold text-primary mb-6">Contact Information</h3>
               
               <div className="space-y-4">
-                <div className="flex items-center gap-4 p-3 bg-muted/50 hover:bg-muted transition-colors group">
-                  <Mail className="w-6 h-6 text-primary group-hover:text-accent transition-colors" />
+                <div className="flex items-center gap-4 p-4 bg-card rounded-xl hover:shadow-md transition-all group polar-card">
+                  <div className="p-3 bg-primary/10 rounded-xl">
+                    <Mail className="w-6 h-6 text-primary group-hover:text-accent transition-colors" />
+                  </div>
                   <div>
-                    <p className="text-xs text-muted-foreground">EMAIL</p>
-                    <p className="text-foreground font-mono">your.email@example.com</p>
+                    <p className="text-xs text-muted-foreground font-semibold">EMAIL</p>
+                    <p className="text-foreground">your.email@example.com</p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4 p-3 bg-muted/50 hover:bg-muted transition-colors group">
-                  <Github className="w-6 h-6 text-primary group-hover:text-accent transition-colors" />
+                <div className="flex items-center gap-4 p-4 bg-card rounded-xl hover:shadow-md transition-all group polar-card">
+                  <div className="p-3 bg-primary/10 rounded-xl">
+                    <Github className="w-6 h-6 text-primary group-hover:text-accent transition-colors" />
+                  </div>
                   <div>
-                    <p className="text-xs text-muted-foreground">GITHUB</p>
-                    <p className="text-foreground font-mono">github.com/yourusername</p>
+                    <p className="text-xs text-muted-foreground font-semibold">GITHUB</p>
+                    <p className="text-foreground">github.com/yourusername</p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4 p-3 bg-muted/50 hover:bg-muted transition-colors group">
-                  <Linkedin className="w-6 h-6 text-primary group-hover:text-accent transition-colors" />
+                <div className="flex items-center gap-4 p-4 bg-card rounded-xl hover:shadow-md transition-all group polar-card">
+                  <div className="p-3 bg-primary/10 rounded-xl">
+                    <Linkedin className="w-6 h-6 text-primary group-hover:text-accent transition-colors" />
+                  </div>
                   <div>
-                    <p className="text-xs text-muted-foreground">LINKEDIN</p>
-                    <p className="text-foreground font-mono">linkedin.com/in/yourname</p>
+                    <p className="text-xs text-muted-foreground font-semibold">LINKEDIN</p>
+                    <p className="text-foreground">linkedin.com/in/yourname</p>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-8 p-4 bg-primary/10 border-l-4 border-primary">
-                <p className="pixel-font text-[10px] text-primary mb-2">[ STATUS ]</p>
+              <div className="mt-6 p-4 bg-primary/5 rounded-xl border-l-4 border-primary">
+                <p className="text-xs text-muted-foreground mb-1 font-semibold">STATUS</p>
                 <p className="text-foreground text-sm">
                   Available for internships and cybersecurity opportunities
                 </p>
@@ -68,50 +74,50 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="hud-corner bg-card border border-primary/30 p-6">
-            <h3 className="text-xl font-bold text-primary mb-6">SEND MESSAGE</h3>
+          <div className="frost-glass rounded-2xl p-6">
+            <h3 className="text-xl font-bold text-primary mb-6">Send a Message</h3>
             
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-xs text-muted-foreground mb-2 font-mono">NAME</label>
+                <label className="block text-sm text-muted-foreground mb-2 font-semibold">Name</label>
                 <input
                   type="text"
                   value={formData.name}
                   onChange={(e) => setFormData({...formData, name: e.target.value})}
-                  className="w-full px-4 py-3 bg-muted border border-primary/30 text-foreground focus:border-primary focus:outline-none transition-colors font-mono"
-                  placeholder="Enter your name..."
+                  className="w-full px-4 py-3 bg-card border border-primary/20 rounded-xl text-foreground focus:border-primary focus:outline-none transition-colors"
+                  placeholder="Your name"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-xs text-muted-foreground mb-2 font-mono">EMAIL</label>
+                <label className="block text-sm text-muted-foreground mb-2 font-semibold">Email</label>
                 <input
                   type="email"
                   value={formData.email}
                   onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  className="w-full px-4 py-3 bg-muted border border-primary/30 text-foreground focus:border-primary focus:outline-none transition-colors font-mono"
+                  className="w-full px-4 py-3 bg-card border border-primary/20 rounded-xl text-foreground focus:border-primary focus:outline-none transition-colors"
                   placeholder="your@email.com"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-xs text-muted-foreground mb-2 font-mono">MESSAGE</label>
+                <label className="block text-sm text-muted-foreground mb-2 font-semibold">Message</label>
                 <textarea
                   value={formData.message}
                   onChange={(e) => setFormData({...formData, message: e.target.value})}
-                  className="w-full px-4 py-3 bg-muted border border-primary/30 text-foreground focus:border-primary focus:outline-none transition-colors font-mono h-32 resize-none"
-                  placeholder="Your message here..."
+                  className="w-full px-4 py-3 bg-card border border-primary/20 rounded-xl text-foreground focus:border-primary focus:outline-none transition-colors h-32 resize-none"
+                  placeholder="Your message..."
                   required
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full px-6 py-3 bg-primary text-primary-foreground font-bold uppercase tracking-wider hover:shadow-[0_0_20px_hsl(var(--cyber-green))] transition-all duration-300 flex items-center justify-center gap-2 group"
+                className="w-full px-6 py-3 bg-primary text-primary-foreground rounded-xl font-semibold hover:shadow-[0_0_30px_hsl(var(--ice-blue)/0.4)] transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-2 group"
               >
-                <span>SEND</span>
+                <span>Send Message</span>
                 <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </form>

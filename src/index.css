@@ -8,56 +8,56 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 220 25% 6%;
-    --foreground: 160 100% 85%;
+    --background: 210 40% 98%;
+    --foreground: 215 25% 27%;
 
-    --card: 220 20% 10%;
-    --card-foreground: 160 100% 85%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 27%;
 
-    --popover: 220 20% 10%;
-    --popover-foreground: 160 100% 85%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 27%;
 
-    --primary: 160 100% 50%;
-    --primary-foreground: 220 25% 6%;
+    --primary: 200 80% 50%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 280 100% 60%;
-    --secondary-foreground: 220 25% 6%;
+    --secondary: 195 55% 88%;
+    --secondary-foreground: 215 25% 27%;
 
-    --muted: 220 15% 20%;
-    --muted-foreground: 160 20% 60%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 25 100% 55%;
-    --accent-foreground: 220 25% 6%;
+    --accent: 190 75% 60%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 80% 55%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 160 100% 35%;
-    --input: 220 15% 20%;
-    --ring: 160 100% 50%;
+    --border: 210 30% 88%;
+    --input: 210 30% 88%;
+    --ring: 200 80% 50%;
 
-    --radius: 0rem;
+    --radius: 1rem;
 
-    --sidebar-background: 220 20% 8%;
-    --sidebar-foreground: 160 100% 85%;
-    --sidebar-primary: 160 100% 50%;
-    --sidebar-primary-foreground: 220 25% 6%;
-    --sidebar-accent: 220 15% 15%;
-    --sidebar-accent-foreground: 160 100% 85%;
-    --sidebar-border: 160 100% 35%;
-    --sidebar-ring: 160 100% 50%;
+    --sidebar-background: 210 40% 98%;
+    --sidebar-foreground: 215 25% 27%;
+    --sidebar-primary: 200 80% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 215 25% 27%;
+    --sidebar-border: 210 30% 88%;
+    --sidebar-ring: 200 80% 50%;
 
-    /* Custom gaming tokens */
-    --cyber-green: 160 100% 50%;
-    --cyber-cyan: 180 100% 50%;
-    --fps-orange: 25 100% 55%;
-    --danger-red: 0 80% 55%;
-    --grid-color: 160 100% 15%;
+    /* Winter theme tokens */
+    --ice-blue: 200 80% 50%;
+    --frost-blue: 195 55% 88%;
+    --snow-white: 0 0% 100%;
+    --polar-gray: 215 16% 47%;
+    --arctic-teal: 190 75% 60%;
     
-    /* Shadows & Glows */
-    --glow-green: 0 0 20px hsl(160 100% 50% / 0.5);
-    --glow-orange: 0 0 20px hsl(25 100% 55% / 0.5);
-    --shadow-deep: 0 10px 40px hsl(220 25% 0% / 0.8);
+    /* Shadows & Effects */
+    --frost-shadow: 0 8px 32px hsl(200 80% 50% / 0.15);
+    --ice-glow: 0 0 30px hsl(200 80% 50% / 0.3);
+    --snow-shadow: 0 4px 16px hsl(210 30% 70% / 0.2);
   }
 }
 
@@ -68,125 +68,102 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-weight: 700;
   }
 }
 
 @layer utilities {
-  .pixel-font {
-    font-family: 'Press Start 2P', cursive;
-  }
-
-  .cyber-grid {
+  .snow-pattern {
     background-image: 
-      linear-gradient(hsl(var(--grid-color)) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(var(--grid-color)) 1px, transparent 1px);
-    background-size: 40px 40px;
+      radial-gradient(circle at 20% 50%, hsl(200 80% 95% / 0.6) 0%, transparent 50%),
+      radial-gradient(circle at 60% 30%, hsl(190 75% 92% / 0.4) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, hsl(195 55% 90% / 0.5) 0%, transparent 50%);
   }
 
-  .scanline {
+  .frost-glass {
+    background: hsl(0 0% 100% / 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(200 80% 95%);
+    box-shadow: var(--frost-shadow);
+  }
+
+  .ice-shimmer {
     position: relative;
     overflow: hidden;
   }
 
-  .scanline::before {
+  .ice-shimmer::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
     background: linear-gradient(
-      transparent 50%,
-      hsl(160 100% 50% / 0.03) 50%
+      45deg,
+      transparent 30%,
+      hsl(200 80% 95% / 0.3) 50%,
+      transparent 70%
     );
-    background-size: 100% 4px;
-    pointer-events: none;
-    animation: scan 8s linear infinite;
+    animation: shimmer 3s infinite;
   }
 
-  @keyframes scan {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(100%); }
+  @keyframes shimmer {
+    0% { transform: translateX(-100%) translateY(-100%); }
+    100% { transform: translateX(100%) translateY(100%); }
   }
 
-  .glitch {
+  .snowfall {
     position: relative;
   }
 
-  .glitch::before,
-  .glitch::after {
-    content: attr(data-text);
+  .snowfall::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    background-image: 
+      radial-gradient(2px 2px at 20% 30%, white, transparent),
+      radial-gradient(2px 2px at 60% 70%, white, transparent),
+      radial-gradient(1px 1px at 50% 50%, white, transparent),
+      radial-gradient(1px 1px at 80% 10%, white, transparent),
+      radial-gradient(2px 2px at 90% 60%, white, transparent),
+      radial-gradient(1px 1px at 33% 80%, white, transparent),
+      radial-gradient(1px 1px at 15% 55%, white, transparent);
+    background-size: 200% 200%;
+    animation: snowfall 20s linear infinite;
+    opacity: 0.6;
+    pointer-events: none;
   }
 
-  .glitch::before {
-    animation: glitch-1 0.5s infinite;
-    color: hsl(var(--cyber-cyan));
-    z-index: -1;
+  @keyframes snowfall {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 0% 200%; }
   }
 
-  .glitch::after {
-    animation: glitch-2 0.5s infinite;
-    color: hsl(var(--fps-orange));
-    z-index: -2;
-  }
-
-  @keyframes glitch-1 {
-    0%, 100% { transform: translate(0); }
-    20% { transform: translate(-2px, 2px); }
-    40% { transform: translate(-2px, -2px); }
-    60% { transform: translate(2px, 2px); }
-    80% { transform: translate(2px, -2px); }
-  }
-
-  @keyframes glitch-2 {
-    0%, 100% { transform: translate(0); }
-    20% { transform: translate(2px, -2px); }
-    40% { transform: translate(2px, 2px); }
-    60% { transform: translate(-2px, -2px); }
-    80% { transform: translate(-2px, 2px); }
-  }
-
-  .neon-border {
-    border: 2px solid hsl(var(--cyber-green));
+  .ice-border {
+    border: 2px solid hsl(var(--ice-blue));
     box-shadow: 
-      0 0 10px hsl(var(--cyber-green) / 0.5),
-      inset 0 0 10px hsl(var(--cyber-green) / 0.2);
+      0 0 15px hsl(var(--ice-blue) / 0.3),
+      inset 0 0 15px hsl(var(--frost-blue) / 0.2);
   }
 
-  .hud-corner {
+  .polar-card {
     position: relative;
+    border-radius: var(--radius);
+    transition: all 0.3s ease;
   }
 
-  .hud-corner::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    width: 20px;
-    height: 20px;
-    border-top: 3px solid hsl(var(--cyber-green));
-    border-left: 3px solid hsl(var(--cyber-green));
-  }
-
-  .hud-corner::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    right: -2px;
-    width: 20px;
-    height: 20px;
-    border-bottom: 3px solid hsl(var(--cyber-green));
-    border-right: 3px solid hsl(var(--cyber-green));
+  .polar-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--ice-glow);
   }
 }

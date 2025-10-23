@@ -1,64 +1,64 @@
-import { ExternalLink, Github, Folder } from "lucide-react";
+import { ExternalLink, Github, Folder, Snowflake } from "lucide-react";
 
 const Projects = () => {
   const projects = [
     {
-      title: "PROJECT_01",
-      description: "Your first project description will go here. Update with your actual project details.",
+      title: "Project One",
+      description: "Your first project description will go here. Update with your actual project details and achievements.",
       tags: ["Security", "Python", "Analysis"],
       status: "ACTIVE"
     },
     {
-      title: "PROJECT_02",
-      description: "Your second project description. Add details about the technologies and outcomes.",
+      title: "Project Two",
+      description: "Your second project description. Add details about the technologies used and outcomes achieved.",
       tags: ["Web", "JavaScript", "Development"],
       status: "COMPLETE"
     },
     {
-      title: "PROJECT_03",
-      description: "Another project placeholder. Replace with your real project information.",
+      title: "Project Three",
+      description: "Another project placeholder. Replace with your real project information and impact.",
       tags: ["Network", "Linux", "Tools"],
       status: "IN PROGRESS"
     }
   ];
 
   return (
-    <section id="projects" className="py-20 px-6 relative">
+    <section id="projects" className="py-20 px-6 relative snow-pattern">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
-          <span className="text-primary">&lt;</span>
-          PROJECTS
-          <span className="text-primary">/&gt;</span>
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-primary">
+          Projects & Work
         </h2>
-        <p className="text-center text-muted-foreground mb-16 pixel-font text-xs">
-          [ MISSIONS COMPLETED ]
+        <p className="text-center text-muted-foreground mb-16 flex items-center justify-center gap-2">
+          <Snowflake className="w-4 h-4" />
+          <span>Building and learning along the way</span>
+          <Snowflake className="w-4 h-4" />
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, idx) => (
             <div 
               key={idx}
-              className="group relative"
+              className="group"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
-              <div className="relative hud-corner bg-card border border-primary/30 p-6 h-full flex flex-col hover:border-primary transition-all duration-300">
+              <div className="frost-glass rounded-2xl p-6 h-full flex flex-col polar-card">
                 <div className="flex items-start justify-between mb-4">
-                  <Folder className="w-10 h-10 text-primary" />
-                  <span className={`pixel-font text-[8px] px-2 py-1 ${
+                  <div className="p-3 bg-primary/10 rounded-xl">
+                    <Folder className="w-8 h-8 text-primary" />
+                  </div>
+                  <span className={`text-xs px-3 py-1 rounded-full font-semibold ${
                     project.status === "ACTIVE" ? "bg-primary text-primary-foreground" :
                     project.status === "COMPLETE" ? "bg-accent text-accent-foreground" :
-                    "bg-secondary text-secondary-foreground"
+                    "bg-secondary text-foreground"
                   }`}>
                     {project.status}
                   </span>
                 </div>
 
-                <h3 className="text-xl font-bold text-primary mb-3 font-mono">
+                <h3 className="text-xl font-bold text-primary mb-3">
                   {project.title}
                 </h3>
 
-                <p className="text-foreground text-sm mb-4 flex-grow">
+                <p className="text-foreground text-sm mb-4 flex-grow leading-relaxed">
                   {project.description}
                 </p>
 
@@ -66,18 +66,18 @@ const Projects = () => {
                   {project.tags.map((tag, tagIdx) => (
                     <span 
                       key={tagIdx}
-                      className="text-xs px-2 py-1 bg-muted text-muted-foreground border border-primary/30"
+                      className="text-xs px-3 py-1 bg-secondary rounded-full text-foreground border border-primary/20"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex gap-4 mt-auto pt-4 border-t border-primary/30">
-                  <button className="text-primary hover:text-accent transition-colors" title="View Details">
+                <div className="flex gap-4 mt-auto pt-4 border-t border-primary/20">
+                  <button className="text-primary hover:text-accent transition-colors hover:scale-110 transform duration-200" title="View Details">
                     <ExternalLink className="w-5 h-5" />
                   </button>
-                  <button className="text-primary hover:text-accent transition-colors" title="View Code">
+                  <button className="text-primary hover:text-accent transition-colors hover:scale-110 transform duration-200" title="View Code">
                     <Github className="w-5 h-5" />
                   </button>
                 </div>
@@ -87,13 +87,13 @@ const Projects = () => {
         </div>
 
         <div className="mt-12 text-center">
-          <p className="text-muted-foreground mb-4">
-            More projects coming soon. Currently working on exciting cybersecurity challenges!
-          </p>
-          <div className="inline-block px-6 py-2 bg-muted/50 border border-primary/30">
-            <span className="pixel-font text-xs text-primary animate-pulse">
-              [ LOADING... ]
-            </span>
+          <div className="frost-glass rounded-2xl p-6 inline-block">
+            <p className="text-muted-foreground mb-2">
+              More projects coming soon
+            </p>
+            <p className="text-sm text-foreground">
+              Currently working on exciting cybersecurity challenges!
+            </p>
           </div>
         </div>
       </div>

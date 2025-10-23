@@ -1,95 +1,86 @@
-import { useEffect, useState } from "react";
-import { Terminal, Shield, Code } from "lucide-react";
+import { Snowflake, Mountain, GraduationCap } from "lucide-react";
+import heroImage from "@/assets/polar-bear-hero.jpg";
 
 const Hero = () => {
-  const [text, setText] = useState("");
-  const fullText = "CYBERSECURITY SPECIALIST";
-  
-  useEffect(() => {
-    let index = 0;
-    const timer = setInterval(() => {
-      if (index <= fullText.length) {
-        setText(fullText.slice(0, index));
-        index++;
-      } else {
-        clearInterval(timer);
-      }
-    }, 100);
-    return () => clearInterval(timer);
-  }, []);
-
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden cyber-grid">
-      <div className="absolute inset-0 scanline" />
-      
-      {/* Floating icons */}
-      <div className="absolute top-20 left-10 animate-pulse">
-        <Terminal className="w-8 h-8 text-cyber-green opacity-20" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${heroImage})` }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background"></div>
       </div>
-      <div className="absolute bottom-20 right-10 animate-pulse delay-75">
-        <Shield className="w-12 h-12 text-cyber-cyan opacity-20" />
+
+      {/* Snowfall Effect */}
+      <div className="absolute inset-0 snowfall" />
+
+      {/* Floating Snowflakes */}
+      <div className="absolute top-20 left-10 animate-bounce opacity-40">
+        <Snowflake className="w-12 h-12 text-primary" />
       </div>
-      <div className="absolute top-1/3 right-1/4 animate-pulse delay-150">
-        <Code className="w-10 h-10 text-fps-orange opacity-20" />
+      <div className="absolute top-40 right-20 animate-bounce delay-75 opacity-30" style={{ animationDelay: '1s' }}>
+        <Snowflake className="w-8 h-8 text-accent" />
+      </div>
+      <div className="absolute bottom-40 left-1/4 animate-bounce delay-150 opacity-35" style={{ animationDelay: '2s' }}>
+        <Snowflake className="w-10 h-10 text-primary" />
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
         <div className="mb-6">
-          <span className="pixel-font text-xs text-primary tracking-wider">[ SYSTEM ONLINE ]</span>
+          <Mountain className="w-16 h-16 mx-auto text-primary mb-4" />
         </div>
         
-        <h1 
-          className="text-5xl md:text-7xl font-bold mb-6 glitch" 
-          data-text="PLAYER ONE"
-        >
-          <span className="text-primary">PLAYER</span>{" "}
-          <span className="text-accent">ONE</span>
+        <h1 className="text-5xl md:text-7xl font-bold mb-6">
+          <span className="text-primary">Welcome to</span>
+          <br />
+          <span className="text-foreground">My Arctic Journey</span>
         </h1>
         
-        <div className="mb-8 h-12 flex items-center justify-center">
-          <p className="font-mono text-xl md:text-2xl text-foreground">
-            {text}
-            <span className="animate-pulse">_</span>
+        <div className="mb-8">
+          <p className="text-xl md:text-2xl text-foreground font-light">
+            4th Year Student at PUPSJ
+          </p>
+          <p className="text-lg text-muted-foreground mt-2">
+            Aspiring Cybersecurity Professional
           </p>
         </div>
 
-        <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-          4th Year Student @ PUPSJ | Aspiring Cybersecurity Professional
-          <br />
-          <span className="text-primary">Gaming Enthusiast • Code Warrior • System Defender</span>
+        <p className="text-lg text-foreground/80 mb-12 max-w-2xl mx-auto leading-relaxed">
+          Like a polar bear navigating the vast Arctic, I'm charting my path through 
+          the world of technology and cybersecurity with determination and curiosity.
         </p>
 
         <div className="flex gap-4 justify-center flex-wrap">
           <a 
-            href="#projects" 
-            className="px-8 py-3 bg-primary text-primary-foreground font-bold uppercase tracking-wider hover:shadow-[0_0_20px_hsl(var(--cyber-green))] transition-all duration-300 clip-corner"
+            href="#about" 
+            className="px-8 py-4 bg-primary text-primary-foreground rounded-full font-semibold hover:shadow-[0_0_30px_hsl(var(--ice-blue)/0.4)] transition-all duration-300 hover:scale-105"
           >
-            View Projects
+            Explore My Story
           </a>
           <a 
             href="#contact" 
-            className="px-8 py-3 border-2 border-primary text-primary font-bold uppercase tracking-wider hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+            className="px-8 py-4 border-2 border-primary text-primary rounded-full font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105"
           >
-            Contact
+            Get in Touch
           </a>
         </div>
 
-        {/* HUD Elements */}
-        <div className="absolute bottom-10 left-10 hidden md:block">
-          <div className="hud-corner p-4 bg-card/50 backdrop-blur-sm">
-            <p className="pixel-font text-[8px] text-primary">HP: 100</p>
-            <div className="w-32 h-2 bg-muted mt-2">
-              <div className="h-full w-full bg-primary"></div>
-            </div>
+        {/* Decorative Elements */}
+        <div className="mt-16 flex justify-center gap-8 text-muted-foreground">
+          <div className="flex items-center gap-2">
+            <GraduationCap className="w-5 h-5 text-primary" />
+            <span className="text-sm">Student</span>
           </div>
-        </div>
-
-        <div className="absolute bottom-10 right-10 hidden md:block">
-          <div className="hud-corner p-4 bg-card/50 backdrop-blur-sm">
-            <p className="pixel-font text-[8px] text-accent">SKILLS: ∞</p>
-            <div className="w-32 h-2 bg-muted mt-2">
-              <div className="h-full w-3/4 bg-accent"></div>
-            </div>
+          <div className="w-px h-6 bg-border"></div>
+          <div className="flex items-center gap-2">
+            <Snowflake className="w-5 h-5 text-accent" />
+            <span className="text-sm">Nature Lover</span>
+          </div>
+          <div className="w-px h-6 bg-border"></div>
+          <div className="flex items-center gap-2">
+            <Mountain className="w-5 h-5 text-primary" />
+            <span className="text-sm">Explorer</span>
           </div>
         </div>
       </div>
