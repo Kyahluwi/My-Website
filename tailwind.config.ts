@@ -13,6 +13,11 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        'pixel': ['"Press Start 2P"', 'cursive'],
+        'mono': ['"Share Tech Mono"', 'monospace'],
+        'orbitron': ['Orbitron', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -57,6 +62,10 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        'cyber-green': "hsl(var(--cyber-green))",
+        'cyber-cyan': "hsl(var(--cyber-cyan))",
+        'fps-orange': "hsl(var(--fps-orange))",
+        'danger-red': "hsl(var(--danger-red))",
       },
       borderRadius: {
         lg: "var(--radius)",
