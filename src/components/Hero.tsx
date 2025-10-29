@@ -1,6 +1,7 @@
 import { Snowflake, Mountain, GraduationCap } from "lucide-react";
 import heroImage from "@/assets/polar-bear-hero.jpg";
 
+
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">

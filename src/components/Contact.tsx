@@ -39,7 +39,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-xs text-muted-foreground font-semibold">EMAIL</p>
-                    <p className="text-foreground">your.email@example.com</p>
+                    <p className="text-foreground">louie24semera@gmail.com</p>
                   </div>
                 </div>
 
@@ -49,7 +49,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-xs text-muted-foreground font-semibold">GITHUB</p>
-                    <p className="text-foreground">github.com/yourusername</p>
+                    <p className="text-foreground">github.com/Kyahluwi</p>
                   </div>
                 </div>
 
@@ -59,7 +59,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-xs text-muted-foreground font-semibold">LINKEDIN</p>
-                    <p className="text-foreground">linkedin.com/in/yourname</p>
+                    <p className="text-foreground">linkedin.com/in/louie-semera</p>
                   </div>
                 </div>
               </div>
@@ -67,7 +67,7 @@ const Contact = () => {
               <div className="mt-6 p-4 bg-primary/5 rounded-xl border-l-4 border-primary">
                 <p className="text-xs text-muted-foreground mb-1 font-semibold">STATUS</p>
                 <p className="text-foreground text-sm">
-                  Available for internships and cybersecurity opportunities
+                  Available for internships and cybersecurity opportunities and Seminars
                 </p>
               </div>
             </div>

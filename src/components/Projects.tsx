@@ -3,21 +3,21 @@ import { ExternalLink, Github, Folder, Snowflake } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
-      title: "Project One",
-      description: "Your first project description will go here. Update with your actual project details and achievements.",
-      tags: ["Security", "Python", "Analysis"],
-      status: "ACTIVE"
-    },
-    {
-      title: "Project Two",
-      description: "Your second project description. Add details about the technologies used and outcomes achieved.",
-      tags: ["Web", "JavaScript", "Development"],
+      title: "Product Delivery Management System",
+      description: "A System application for managing product deliveries, optimizing routes, and tracking shipments.",
+      tags: ["Java", "Storage", "Analysis"],
       status: "COMPLETE"
     },
     {
-      title: "Project Three",
-      description: "Another project placeholder. Replace with your real project information and impact.",
-      tags: ["Network", "Linux", "Tools"],
+      title: "Game Simulation Project",
+      description: "A web-based game simulation project built with JavaScript, showcasing real-time interactions and dynamic gameplay.",
+      tags: ["Web", "JavaScript", "Development"],
+      status: "IN PROGRESS"
+    },
+    {
+      title: "Karangalan LYNX - Karangalan Health Monitoring System",
+      description: "A health monitoring system designed to track and manage patient data effectively.",
+      tags: ["React", "SQL", "Geolocation"],
       status: "IN PROGRESS"
     }
   ];

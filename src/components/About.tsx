@@ -1,5 +1,6 @@
 import { User, GraduationCap, Target, ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const About = () => {
   const [educationExpanded, setEducationExpanded] = useState(false);
@@ -7,26 +8,26 @@ const About = () => {
   const educationTimeline = [
     {
       level: "Elementary",
-      school: "Your Elementary School Name",
-      years: "YEAR - YEAR",
-      description: "Foundation years where curiosity began"
+      school: "Sto Nino Elementary School",
+      years: "2010 - 2016",
+      description: "Friendly Student - Foundation years where curiosity began"
     },
     {
       level: "Junior High School",
-      school: "Your Junior High School Name",
-      years: "YEAR - YEAR",
-      description: "Developing interests and skills"
+      school: "Manggahan High School",
+      years: "2016 - 2020",
+      description: "Honor Student - Developing discipline and a love for learning"
     },
     {
       level: "Senior High School",
-      school: "Your Senior High School Name",
-      years: "YEAR - YEAR",
-      description: "Preparing for higher education"
+      school: "San Lorenzo Ruiz Senior High School",
+      years: "2020 - 2022",
+      description: "High Honor STEM Student - Building a strong academic foundation"
     },
     {
       level: "College (Current)",
       school: "Polytechnic University of the Philippines - San Juan",
-      years: "YEAR - Present",
+      years: "2022 - Present",
       description: "4th Year - Specializing in Cybersecurity",
       current: true
     }
@@ -43,8 +44,13 @@ const About = () => {
           <div className="relative">
             <div className="aspect-square frost-glass rounded-3xl p-8 flex items-center justify-center ice-shimmer">
               <div className="text-center">
-                <User className="w-32 h-32 mx-auto mb-4 text-primary" />
-                <p className="text-sm text-muted-foreground font-semibold tracking-wide">PUPSJ STUDENT</p>
+                <Avatar className="w-32 h-32 mx-auto mb-4 border-4 border-primary shadow-[0_0_30px_hsl(var(--ice-blue)/0.3)] hover:shadow-[0_0_50px_hsl(var(--ice-blue)/0.5)] transition-all duration-300">
+                  <AvatarImage src="src/assets/Profilepic.svg" alt="Profile Picture" />
+                  <AvatarFallback className="bg-primary/20 text-primary text-3xl font-bold">
+                    ME
+                  </AvatarFallback>
+                </Avatar>
+                <p className="text-sm text-muted-foreground font-semibold tracking-wide">CARL LOUIE A. SEMERA</p>
               </div>
             </div>
           </div>

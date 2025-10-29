@@ -6,19 +6,22 @@ const Skills = () => {
       title: "Cybersecurity",
       icon: Shield,
       color: "primary",
-      skills: ["Network Security", "Penetration Testing", "Threat Analysis", "Security Protocols"]
+      skills: ["Network Security", "Penetration Testing", "Threat Analysis"],
+      proficiency: 67
     },
     {
       title: "Development",
       icon: Code,
       color: "accent",
-      skills: ["Python", "JavaScript", "Web Development", "Scripting"]
+      skills: ["Python", "JavaScript", "React"],
+      proficiency: 78
     },
     {
       title: "Systems",
       icon: Database,
       color: "primary",
-      skills: ["Linux Administration", "Windows Server", "Database Management", "Cloud Services"]
+      skills: ["Windows Server", "Database Management", "Cloud Services"],
+      proficiency: 56
     }
   ];
 
@@ -72,11 +75,11 @@ const Skills = () => {
                     <div className="w-full h-2 bg-secondary rounded-full overflow-hidden">
                       <div 
                         className="h-full bg-gradient-to-r from-primary to-accent transition-all duration-1000 group-hover:w-full rounded-full"
-                        style={{ width: '75%' }}
+                        style={{ width: `${category.proficiency}%` }}
                       ></div>
                     </div>
                     <p className="text-xs text-muted-foreground mt-2 text-right font-semibold">
-                      Proficiency: 75%
+                      Proficiency: {category.proficiency}%
                     </p>
                   </div>
                 </div>
@@ -91,7 +94,7 @@ const Skills = () => {
             Tools & Technologies
           </h3>
           <div className="flex flex-wrap justify-center gap-4">
-            {["Kali Linux", "Wireshark", "Metasploit", "Burp Suite", "Nmap", "Git", "Docker", "VS Code"].map((tool, idx) => (
+            {["Kali Linux", "Wireshark", "Metasploit", "Burp Suite", "Nmap", "Git", "VS Code"].map((tool, idx) => (
               <span 
                 key={idx}
                 className="px-5 py-2 bg-card border border-primary/30 rounded-full text-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105 shadow-sm"
