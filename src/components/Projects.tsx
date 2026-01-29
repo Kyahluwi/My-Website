@@ -6,19 +6,22 @@ const Projects = () => {
       title: "Product Delivery Management System",
       description: "A System application for managing product deliveries, optimizing routes, and tracking shipments.",
       tags: ["Java", "Storage", "Analysis"],
-      status: "COMPLETE"
+      status: "COMPLETE",
+      github: "https://github.com/agojolai/delivery-management-system.git"
     },
     {
       title: "Game Simulation Project",
       description: "A web-based game simulation project built with JavaScript, showcasing real-time interactions and dynamic gameplay.",
       tags: ["Web", "JavaScript", "Development"],
-      status: "IN PROGRESS"
+      status: "IN PROGRESS",
+      github: null
     },
     {
       title: "Karangalan LYNX - Karangalan Health Monitoring System",
       description: "A health monitoring system designed to track and manage patient data effectively.",
       tags: ["React", "SQL", "Geolocation"],
-      status: "IN PROGRESS"
+      status: "IN PROGRESS",
+      github: null
     }
   ];
 
@@ -46,7 +49,7 @@ const Projects = () => {
                     <Folder className="w-8 h-8 text-primary" />
                   </div>
                   <span className={`text-xs px-3 py-1 rounded-full font-semibold ${
-                    project.status === "ACTIVE" ? "bg-primary text-primary-foreground" :
+                    project.status === "IN PROGRESS" ? "bg-primary text-primary-foreground" :
                     project.status === "COMPLETE" ? "bg-accent text-accent-foreground" :
                     "bg-secondary text-foreground"
                   }`}>
@@ -74,12 +77,18 @@ const Projects = () => {
                 </div>
 
                 <div className="flex gap-4 mt-auto pt-4 border-t border-primary/20">
-                  <button className="text-primary hover:text-accent transition-colors hover:scale-110 transform duration-200" title="View Details">
-                    <ExternalLink className="w-5 h-5" />
-                  </button>
-                  <button className="text-primary hover:text-accent transition-colors hover:scale-110 transform duration-200" title="View Code">
-                    <Github className="w-5 h-5" />
-                  </button>
+
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:text-accent transition-colors hover:scale-110 transform duration-200"
+                      title="View Code on GitHub"
+                    >
+                      <Github className="w-5 h-5" />
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
@@ -92,7 +101,7 @@ const Projects = () => {
               More projects coming soon
             </p>
             <p className="text-sm text-foreground">
-              Currently working on exciting cybersecurity challenges!
+              Currently working on exciting technology challenges!
             </p>
           </div>
         </div>

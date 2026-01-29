@@ -35,7 +35,7 @@ const Hero = () => {
         <h1 className="text-5xl md:text-7xl font-bold mb-6">
           <span className="text-primary">Welcome to</span>
           <br />
-          <span className="text-foreground">My Arctic Journey</span>
+          <span className="text-foreground">My Arctic Profile</span>
         </h1>
         
         <div className="mb-8">
@@ -43,13 +43,14 @@ const Hero = () => {
             4th Year Student at PUPSJ
           </p>
           <p className="text-lg text-muted-foreground mt-2">
-            Aspiring Cybersecurity Professional
+            Technology Explorer
           </p>
         </div>
 
         <p className="text-lg text-foreground/80 mb-12 max-w-2xl mx-auto leading-relaxed">
-          Like a polar bear navigating the vast Arctic, I'm charting my path through 
-          the world of technology and cybersecurity with determination and curiosity.
+          Like a polar bear navigating the vast and changing Arctic, I'm charting my path through 
+          the world of technology with curiosity and a constant driven to learn. As an Information Technology student,
+          I have gained hands-on experience in system development, web and mobile applocations, database management, and technical support.
         </p>
 
         <div className="flex gap-4 justify-center flex-wrap">
@@ -71,17 +72,17 @@ const Hero = () => {
         <div className="mt-16 flex justify-center gap-8 text-muted-foreground">
           <div className="flex items-center gap-2">
             <GraduationCap className="w-5 h-5 text-primary" />
-            <span className="text-sm">Student</span>
+            <span className="text-sm">Learner</span>
           </div>
           <div className="w-px h-6 bg-border"></div>
           <div className="flex items-center gap-2">
             <Snowflake className="w-5 h-5 text-accent" />
-            <span className="text-sm">Nature Lover</span>
+            <span className="text-sm">Adapt</span>
           </div>
           <div className="w-px h-6 bg-border"></div>
           <div className="flex items-center gap-2">
             <Mountain className="w-5 h-5 text-primary" />
-            <span className="text-sm">Explorer</span>
+            <span className="text-sm">Explore</span>
           </div>
         </div>
       </div>

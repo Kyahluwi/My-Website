@@ -3,25 +3,50 @@ import { Shield, Code, Database, Network, Lock, Snowflake } from "lucide-react";
 const Skills = () => {
   const skillCategories = [
     {
-      title: "Cybersecurity",
-      icon: Shield,
-      color: "primary",
-      skills: ["Network Security", "Penetration Testing", "Threat Analysis"],
-      proficiency: 67
-    },
-    {
-      title: "Development",
+      title: "Web & Application Development",
       icon: Code,
-      color: "accent",
-      skills: ["Python", "JavaScript", "React"],
-      proficiency: 78
+      color: "primary",
+      skills: [
+        "HTML, CSS, JavaScript",
+        "React.js",
+        "Responsive UI Design",
+        "Debugging & Feature Implementation"
+      ],
+      proficiency: 80
     },
     {
-      title: "Systems",
+      title: "Backend & Databases",
       icon: Database,
+      color: "accent",
+      skills: [
+        "PHP",
+        "MySQL",
+        "Firebase & Supabase",
+        "Salesforce Apex"
+      ],
+      proficiency: 70
+    },
+    {
+      title: "Systems, Networking & IT Support",
+      icon: Network,
       color: "primary",
-      skills: ["Windows Server", "Database Management", "Cloud Services"],
-      proficiency: 56
+      skills: [
+        "Virtual Machines (Kali Linux, Windows Server 2019)",
+        "Cisco Packet Tracer",
+        "PC Assembly & Troubleshooting"
+      ],
+      proficiency: 65
+    },
+    {
+      title: "Security Fundamentals",
+      icon: Shield,
+      color: "accent",
+      skills: [
+        "Basic Network Security",
+        "Threat Awareness",
+        "Secure System Practices"
+      ],
+      proficiency: 55
     }
   ];
 
@@ -94,7 +119,17 @@ const Skills = () => {
             Tools & Technologies
           </h3>
           <div className="flex flex-wrap justify-center gap-4">
-            {["Kali Linux", "Wireshark", "Metasploit", "Burp Suite", "Nmap", "Git", "VS Code"].map((tool, idx) => (
+                                {[
+                        "Cisco Packet Tracer",
+                        "Firebase",
+                        "Git",
+                        "Kali Linux",
+                        "MySQL",
+                        "Virtual Machines",
+                        "VS Code",
+                        "Windows Server 2019"
+                      ]
+                    .map((tool, idx) => (
               <span 
                 key={idx}
                 className="px-5 py-2 bg-card border border-primary/30 rounded-full text-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105 shadow-sm"

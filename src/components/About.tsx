@@ -1,5 +1,6 @@
 import { User, GraduationCap, Target, ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
+import ProfilePic from "@/assets/Profilepic.png";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const About = () => {
@@ -8,7 +9,7 @@ const About = () => {
   const educationTimeline = [
     {
       level: "Elementary",
-      school: "Sto Nino Elementary School",
+      school: "Sto Niño Elementary School",
       years: "2010 - 2016",
       description: "Friendly Student - Foundation years where curiosity began"
     },
@@ -45,7 +46,7 @@ const About = () => {
             <div className="aspect-square frost-glass rounded-3xl p-8 flex items-center justify-center ice-shimmer">
               <div className="text-center">
                 <Avatar className="w-32 h-32 mx-auto mb-4 border-4 border-primary shadow-[0_0_30px_hsl(var(--ice-blue)/0.3)] hover:shadow-[0_0_50px_hsl(var(--ice-blue)/0.5)] transition-all duration-300">
-                  <AvatarImage src="src/assets/Profilepic.svg" alt="Profile Picture" />
+                  <AvatarImage src={ProfilePic} alt="Profile Picture" />
                   <AvatarFallback className="bg-primary/20 text-primary text-3xl font-bold">
                     ME
                   </AvatarFallback>
@@ -117,7 +118,7 @@ const About = () => {
                   <p className="text-foreground">
                     Currently in 4th Year at
                     <br />
-                    <span className="text-muted-foreground">Polytechnic University of the Philippines - San Juan</span>
+                    <span className="text-muted-foreground">Polytechnic University of the Philippines - San Juan Campus</span>
                   </p>
                 </div>
               )}
@@ -132,9 +133,8 @@ const About = () => {
                 <div>
                   <h3 className="text-xl font-bold text-accent mb-2">My Mission</h3>
                   <p className="text-foreground leading-relaxed">
-                    Transitioning from a passion for gaming to expertise in cybersecurity. 
-                    I bring the strategic thinking from FPS games and creative problem-solving 
-                    from Minecraft to tackle real-world security challenges.
+                     My mission is to apply my technical knowledge in web and system development, backend solutions, and IT support to real world projects. 
+                      I strive to continuously learn, solve problems creatively, and contribute meaningfully to the teams and organizations I work with.
                   </p>
                 </div>
               </div>
@@ -143,9 +143,9 @@ const About = () => {
             {/* About Description */}
             <div className="p-6 bg-card rounded-2xl border-l-4 border-primary shadow-lg">
               <p className="text-foreground leading-relaxed">
-                Like navigating through snowy landscapes with patience and strategy, 
-                I approach cybersecurity with careful attention to detail and determination. 
-                Currently leveling up my skills to become a professional security specialist.
+                I approach technology challenges with patience, attention to detail, and a solutions oriented mindset. 
+                Continuously expanding my skills in programming, web and mobile development, databases, and systems administration, 
+                I aim to grow as a competent IT professional ready to contribute to real-world projects.
               </p>
             </div>
           </div>

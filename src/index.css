@@ -101,18 +101,15 @@ All colors MUST be HSL.
   .ice-shimmer::after {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(
-      45deg,
-      transparent 30%,
-      hsl(200 80% 95% / 0.3) 50%,
-      transparent 70%
+    inset: 0;
+    background: radial-gradient(
+      circle at top left,
+      hsl(200 80% 95% / 0.12),
+      transparent 60%
     );
-    animation: shimmer 3s infinite;
+    pointer-events: none;
   }
+
 
   @keyframes shimmer {
     0% { transform: translateX(-100%) translateY(-100%); }
